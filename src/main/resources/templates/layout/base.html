@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    th:fragment="layout(content)">
+<head>
+    <meta charset="utf-8" />
+    <title th:text="${title} ?: 'VerityLabs'"></title>
+    <link th:href="@{/css/sb-admin-2.css}" rel="stylesheet">
+    <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet">
+</head>
+<body>
+    <div th:replace="~{fragments/topbar :: topbar}"></div>
+    <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+    <main>
+        <div th:replace="${content}"></div>
+    </main>
+
+    <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/sb-admin-2.js}"></script>
+</body>
