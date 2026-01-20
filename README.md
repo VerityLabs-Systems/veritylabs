@@ -1,6 +1,6 @@
 # 📦 VerityLabs - Laboratory Systems Platatform
 
-##Overview
+## Overview
 **VerityLabs** is a software system focused on **laboratory informatics and engineering-oriented workflows**.
 The project is being developed as a **research-oriented laboratory systems platform**, serving as a technical and conceptual foundation for a future **professional master's degree project** in the area of laboratory analytical and decision support.
 
