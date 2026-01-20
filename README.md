@@ -23,7 +23,7 @@ Planned directions incluide:
 These components are intentionally deferred to later stages to ensure that analytical work is grounded in reliable and traceable operational data.
 
 ## 🚧 Project Status
-**Status** Early development
+**Status:** Early development
 **Current milestone** Laboratory WMS foundation
 
 The README is updated incrementally to reflect implemented features rather than future commitments.
