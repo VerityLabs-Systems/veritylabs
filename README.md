@@ -8,7 +8,7 @@ The project is being developed as a **research-oriented laboratory systems platf
 The Laboratory Warehouse Management System (WMS) is intentionally implemented first because it reoesents a **simpler abd wekk-defined operational domain**, allowing the system architecture, workflows, and traceability principles to be validated early.
 Inventory data - such as reagents, batches, expriration dates, and consumption - provides essential operational context that will latter support analyticaland quality-related modules.
 
-##🧱 Current Focus: Laboratory WMS
+## 🧱 Current Focus: Laboratory WMS
 At the current stage, the project focuses on the implementation of a **laboratory-oriented WMS**, emphasizing traceability and realistic operational workflows.
 
 
