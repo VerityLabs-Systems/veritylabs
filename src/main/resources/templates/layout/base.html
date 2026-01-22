@@ -21,17 +21,17 @@
 
                 <div id="content">
 
-                    <!-- Topbar -->
-                        <div th:replace="~{fragments/topbar :: topbar}"></div>
+                    <div th:replace="~{fragments/topbar :: topbar}"></div>
 
+                    <main>
+                        <div th:replace="${content}"></div>
+                    </main>
                 </div>
             </div>
         </div>
     </div>
 
-    <main>
-        <div th:replace="${content}"></div>
-    </main>
+
 
     <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
     <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
