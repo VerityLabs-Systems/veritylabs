@@ -1,14 +1,16 @@
-<div xmlns:th="http://www.thymeleaf.org"
-th:replace="~{layout/base :: layout(~{:: section})}">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::content})}">
 
+<th:block th:fragment="content">
     <section>
-        <h1 class="h3 mb-3 text-gray-800">Inventory</h1>
+        <h1 class="h3 mb-3 text-gray-800">Controle de Estoque</h1>
 
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Total reagents</div>
+                        <div class="text-xs font-weight-bold text-uppercase mb-1">Total de Reagentes</div>
                         <div class="h5 mb-0">--</div>
                     </div>
                 </div>
@@ -17,7 +19,7 @@ th:replace="~{layout/base :: layout(~{:: section})}">
             <div class="col-md-4 mb-3">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Low stock</div>
+                        <div class="text-xs font-weight-bold text-uppercase mb-1">Estoque Baixo</div>
                         <div class="h5 mb-0">--</div>
                     </div>
                 </div>
@@ -26,7 +28,7 @@ th:replace="~{layout/base :: layout(~{:: section})}">
             <div class="col-md-4 mb-3">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Expiring soon</div>
+                        <div class="text-xs font-weight-bold text-uppercase mb-1">Próximos do Vencimento</div>
                         <div class="h5 mb-0">--</div>
                     </div>
                 </div>
@@ -36,10 +38,13 @@ th:replace="~{layout/base :: layout(~{:: section})}">
             <div class="row mt-4">
                 <div class="col">
                     <div class="d-flex mt-3">
-                        <a class="btn btn-primary" th:href="@{/inventory/entry}"> Register entry</a>
-                        <a class="btn btn-outline-primary ml-2" th:href="@{/inventory/consult}">View stock</a>
+                        <a class="btn btn-primary" th:href="@{/inventory/entry}">Registrar Entrada</a>
+                        <a class="btn btn-outline-primary ml-2" th:href="@{/inventory/consult}">Consultar Estoque</a>
+                        <a class="btn btn-outline-danger ml-2" th:href="@{/inventory/exit}">Registrar Saída</a>
                     </div>
                 </div>
             </div>
     </section>
-</div>
+</th:block>
+
+</html>

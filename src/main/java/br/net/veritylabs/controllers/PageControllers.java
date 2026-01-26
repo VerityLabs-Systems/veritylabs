@@ -13,9 +13,5 @@ public class PageControllers {
         return "pages/dashboard";
     }
 
-    @GetMapping({"/index"})
-    public String inventory(Model model) {
-        model.addAttribute("title", "Inventory - VerityLabs");
-        return "inventory/index";
-    }
+
 }
