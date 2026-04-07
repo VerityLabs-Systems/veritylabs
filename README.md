@@ -31,3 +31,13 @@ The README is updated incrementally to reflect implemented features rather than 
 ## 📌 Notes
 This project is currently developed as an independent technical and research-oriented initiative.
 Academic formalization and institutional alignment, when applicable, will be reflected in future updates.
+
+## 🚧 Status
+
+This project is currently under development.
+Paused temporarily due to academic and professional priorities.
+
+Planned features include:
+- Laboratory quality control (Levey-Jennings)
+- Data analysis and visualization
+- Intelligent anomaly detection
