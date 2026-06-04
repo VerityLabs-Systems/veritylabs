@@ -1,49 +1,135 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org"
       th:replace="~{layout/base :: layout(~{::content})}">
 
 <th:block th:fragment="content">
-    <section>
-        <h1 class="h3 mb-3 text-gray-800">Controle de Estoque</h1>
-
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Total de Reagentes</div>
-                        <div class="h5 mb-0">--</div>
-                    </div>
-                </div>
+    <section class="lims-page inventory-page">
+        <div class="page-header">
+            <div>
+                <p class="page-kicker">Inventario</p>
+                <h1>Controle de estoque</h1>
+                <p>Monitore reagentes, calibradores, controles e insumos da rotina laboratorial.</p>
             </div>
-
-            <div class="col-md-4 mb-3">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Estoque Baixo</div>
-                        <div class="h5 mb-0">--</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <div class="text-xs font-weight-bold text-uppercase mb-1">Próximos do Vencimento</div>
-                        <div class="h5 mb-0">--</div>
-                    </div>
-                </div>
+            <div class="page-actions">
+                <a class="btn btn-light btn-sm" th:href="@{/inventory/list}">
+                    <i class="fas fa-list"></i>
+                    Estoque
+                </a>
+                <a class="btn btn-primary btn-sm" th:href="@{/inventory/entry}">
+                    <i class="fas fa-plus"></i>
+                    Registrar entrada
+                </a>
             </div>
         </div>
 
-            <div class="row mt-4">
-                <div class="col">
-                    <div class="d-flex mt-3">
-                        <a class="btn btn-primary" th:href="@{/inventory/entry}">Registrar Entrada</a>
-                        <a class="btn btn-outline-primary ml-2" th:href="@{/inventory/consult}">Consultar Estoque</a>
-                        <a class="btn btn-outline-danger ml-2" th:href="@{/inventory/exit}">Registrar Saída</a>
+        <div class="metric-grid">
+            <article class="metric-card metric-primary">
+                <div class="metric-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div>
+                    <span class="metric-label">Itens cadastrados</span>
+                    <strong>148</strong>
+                    <small>52 reagentes ativos</small>
+                </div>
+            </article>
+            <article class="metric-card metric-warning">
+                <div class="metric-icon">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                <div>
+                    <span class="metric-label">Abaixo do minimo</span>
+                    <strong>7</strong>
+                    <small>Repor antes do proximo turno</small>
+                </div>
+            </article>
+            <article class="metric-card metric-danger">
+                <div class="metric-icon">
+                    <i class="fas fa-calendar-times"></i>
+                </div>
+                <div>
+                    <span class="metric-label">Vencimento proximo</span>
+                    <strong>12</strong>
+                    <small>Em ate 30 dias</small>
+                </div>
+            </article>
+            <article class="metric-card metric-success">
+                <div class="metric-icon">
+                    <i class="fas fa-check-double"></i>
+                </div>
+                <div>
+                    <span class="metric-label">Entradas no mes</span>
+                    <strong>34</strong>
+                    <small>Sem divergencias abertas</small>
+                </div>
+            </article>
+        </div>
+
+        <div class="dashboard-grid">
+            <section class="dashboard-panel panel-wide">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Itens criticos</h2>
+                        <p>Priorize reposicao e verificacao de lote.</p>
+                    </div>
+                    <a th:href="@{/inventory/list}">Ver todos</a>
+                </div>
+
+                <div class="inventory-table">
+                    <div class="inventory-row inventory-head">
+                        <span>Item</span>
+                        <span>Categoria</span>
+                        <span>Lote</span>
+                        <span>Saldo</span>
+                        <span>Status</span>
+                    </div>
+                    <div class="inventory-row">
+                        <span>ALT / TGP</span>
+                        <span>Reagente</span>
+                        <span>ALT2605</span>
+                        <span>3 kits</span>
+                        <span class="status-pill danger">Critico</span>
+                    </div>
+                    <div class="inventory-row">
+                        <span>Reaction Cell</span>
+                        <span>Insumo</span>
+                        <span>RC0419</span>
+                        <span>18 un</span>
+                        <span class="status-pill warning">Baixo</span>
+                    </div>
+                    <div class="inventory-row">
+                        <span>PreciNorm</span>
+                        <span>Controle</span>
+                        <span>PN3102</span>
+                        <span>5 frascos</span>
+                        <span class="status-pill warning">Vence em 12 dias</span>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <section class="dashboard-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Acoes rapidas</h2>
+                        <p>Fluxos principais do almoxarifado tecnico.</p>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <a th:href="@{/inventory/entry}">
+                        <i class="fas fa-arrow-circle-down"></i>
+                        <span>Registrar entrada</span>
+                    </a>
+                    <a th:href="@{/inventory/exit}">
+                        <i class="fas fa-arrow-circle-up"></i>
+                        <span>Registrar saida</span>
+                    </a>
+                    <a th:href="@{/inventory/list}">
+                        <i class="fas fa-search"></i>
+                        <span>Consultar estoque</span>
+                    </a>
+                </div>
+            </section>
+        </div>
     </section>
 </th:block>
 

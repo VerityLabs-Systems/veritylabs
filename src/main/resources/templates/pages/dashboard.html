@@ -2,4 +2,217 @@
 <html xmlns:th="http://www.thymeleaf.org"
       th:replace="~{layout/base :: layout(~{::section})}">
 <section>
+    <div class="lims-dashboard">
+        <div class="dashboard-header">
+            <div>
+                <p class="dashboard-kicker">Operacao laboratorial</p>
+                <h1>Dashboard</h1>
+                <p class="dashboard-subtitle">Visao consolidada da rotina clinica, amostras, resultados e estoque critico.</p>
+            </div>
+            <div class="dashboard-actions">
+                <a class="btn btn-light btn-sm" th:href="@{/inventory/index}">
+                    <i class="fas fa-boxes"></i>
+                    Inventario
+                </a>
+                <a class="btn btn-primary btn-sm" th:href="@{/inventory/entry}">
+                    <i class="fas fa-plus"></i>
+                    Registrar entrada
+                </a>
+            </div>
+        </div>
+
+        <div class="metric-grid">
+            <article class="metric-card metric-primary">
+                <div class="metric-icon">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <div>
+                    <span class="metric-label">Amostras recebidas</span>
+                    <strong>128</strong>
+                    <small>32 aguardando triagem</small>
+                </div>
+            </article>
+
+            <article class="metric-card metric-success">
+                <div class="metric-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div>
+                    <span class="metric-label">Resultados liberados</span>
+                    <strong>86</strong>
+                    <small>+14% desde ontem</small>
+                </div>
+            </article>
+
+            <article class="metric-card metric-warning">
+                <div class="metric-icon">
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <div>
+                    <span class="metric-label">Pendentes de revisao</span>
+                    <strong>21</strong>
+                    <small>6 com SLA proximo</small>
+                </div>
+            </article>
+
+            <article class="metric-card metric-danger">
+                <div class="metric-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div>
+                    <span class="metric-label">Estoque critico</span>
+                    <strong>7</strong>
+                    <small>Reagentes e consumiveis</small>
+                </div>
+            </article>
+        </div>
+
+        <div class="dashboard-grid">
+            <section class="dashboard-panel panel-wide">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Fila de amostras</h2>
+                        <p>Prioridade por setor e prazo de liberacao.</p>
+                    </div>
+                    <span class="panel-badge">Hoje</span>
+                </div>
+
+                <div class="sample-list">
+                    <div class="sample-row urgent">
+                        <div>
+                            <strong>VL-2026-00842</strong>
+                            <span>Hemograma completo - Urgente</span>
+                        </div>
+                        <span class="status-pill danger">Triagem</span>
+                        <span class="row-time">18 min</span>
+                    </div>
+                    <div class="sample-row">
+                        <div>
+                            <strong>VL-2026-00841</strong>
+                            <span>Glicemia de jejum</span>
+                        </div>
+                        <span class="status-pill info">Analise</span>
+                        <span class="row-time">42 min</span>
+                    </div>
+                    <div class="sample-row">
+                        <div>
+                            <strong>VL-2026-00839</strong>
+                            <span>Painel lipidico</span>
+                        </div>
+                        <span class="status-pill warning">Revisao</span>
+                        <span class="row-time">1h 12m</span>
+                    </div>
+                    <div class="sample-row">
+                        <div>
+                            <strong>VL-2026-00836</strong>
+                            <span>TSH e T4 livre</span>
+                        </div>
+                        <span class="status-pill success">Liberado</span>
+                        <span class="row-time">2h 05m</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>SLA operacional</h2>
+                        <p>Distribuicao das entregas do dia.</p>
+                    </div>
+                </div>
+
+                <div class="sla-stack">
+                    <div class="sla-item">
+                        <div class="sla-label">
+                            <span>No prazo</span>
+                            <strong>74%</strong>
+                        </div>
+                        <div class="progress slim">
+                            <div class="progress-bar bg-success" style="width: 74%"></div>
+                        </div>
+                    </div>
+                    <div class="sla-item">
+                        <div class="sla-label">
+                            <span>Atencao</span>
+                            <strong>18%</strong>
+                        </div>
+                        <div class="progress slim">
+                            <div class="progress-bar bg-warning" style="width: 18%"></div>
+                        </div>
+                    </div>
+                    <div class="sla-item">
+                        <div class="sla-label">
+                            <span>Atrasado</span>
+                            <strong>8%</strong>
+                        </div>
+                        <div class="progress slim">
+                            <div class="progress-bar bg-danger" style="width: 8%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Setores</h2>
+                        <p>Carga por area tecnica.</p>
+                    </div>
+                </div>
+
+                <div class="sector-list">
+                    <div class="sector-item">
+                        <span>Hematologia</span>
+                        <strong>38</strong>
+                    </div>
+                    <div class="sector-item">
+                        <span>Bioquimica</span>
+                        <strong>44</strong>
+                    </div>
+                    <div class="sector-item">
+                        <span>Imunologia</span>
+                        <strong>19</strong>
+                    </div>
+                    <div class="sector-item">
+                        <span>Microbiologia</span>
+                        <strong>11</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-panel panel-wide">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Pendencias criticas</h2>
+                        <p>Itens que precisam de acao antes da liberacao.</p>
+                    </div>
+                    <a th:href="@{/inventory/index}">Ver inventario</a>
+                </div>
+
+                <div class="task-grid">
+                    <article class="task-card">
+                        <i class="fas fa-temperature-low"></i>
+                        <div>
+                            <strong>Geladeira 02 fora da faixa</strong>
+                            <span>Registrar verificacao e avaliar impacto em amostras armazenadas.</span>
+                        </div>
+                    </article>
+                    <article class="task-card">
+                        <i class="fas fa-flask"></i>
+                        <div>
+                            <strong>Reagente ALT abaixo do minimo</strong>
+                            <span>Estoque restante estimado para 1 dia de operacao.</span>
+                        </div>
+                    </article>
+                    <article class="task-card">
+                        <i class="fas fa-user-check"></i>
+                        <div>
+                            <strong>6 resultados aguardam revisao</strong>
+                            <span>Bioquimica concentra 4 pendencias de validacao tecnica.</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
 </section>

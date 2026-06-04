@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::content})}">
 
-</body>
+<th:block th:fragment="content">
+    <section class="lims-page inventory-page">
+        <div class="page-header">
+            <div>
+                <p class="page-kicker">Inventario</p>
+                <h1>Registrar saida</h1>
+                <p>Registre consumo, descarte ou transferencia de itens do estoque tecnico.</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn btn-light btn-sm" th:href="@{/inventory/index}">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar
+                </a>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <section class="dashboard-panel panel-wide">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Dados da saida</h2>
+                        <p>Selecione o item e informe motivo, quantidade e setor solicitante.</p>
+                    </div>
+                </div>
+
+                <form class="lims-form" method="post" th:action="@{/inventory/exit}">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="item">Item</label>
+                            <select id="item" name="item" class="form-control">
+                                <option value="" disabled selected>Selecione um item</option>
+                                <th:block th:replace="~{fragments/options :: itemOptions}"></th:block>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="lot">Lote</label>
+                            <input id="lot" name="lot" class="form-control" type="text" placeholder="Ex.: ALT2605">
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantidade</label>
+                            <input id="quantity" name="quantity" class="form-control" type="number" min="1" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Motivo</label>
+                            <select id="reason" name="reason" class="form-control">
+                                <option>Consumo na rotina</option>
+                                <option>Controle de qualidade</option>
+                                <option>Descarte por vencimento</option>
+                                <option>Transferencia</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sector">Setor</label>
+                            <select id="sector" name="sector" class="form-control">
+                                <option>Bioquimica</option>
+                                <option>Hematologia</option>
+                                <option>Imunologia</option>
+                                <option>Microbiologia</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="responsible">Responsavel</label>
+                            <input id="responsible" name="responsible" class="form-control" type="text" placeholder="Nome do responsavel">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <a class="btn btn-light" th:href="@{/inventory/index}">Cancelar</a>
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-save"></i>
+                            Salvar saida
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <aside class="dashboard-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Rastreabilidade</h2>
+                        <p>Saidas devem manter vinculo com lote e responsavel.</p>
+                    </div>
+                </div>
+                <div class="check-list">
+                    <span><i class="fas fa-check"></i> Conferir saldo antes da baixa</span>
+                    <span><i class="fas fa-check"></i> Identificar setor solicitante</span>
+                    <span><i class="fas fa-check"></i> Registrar descarte quando aplicavel</span>
+                </div>
+            </aside>
+        </div>
+    </section>
+</th:block>
+
 </html>

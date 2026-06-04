@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+        <!-- Tipos -->
+        <th:block th:fragment="typeOptions">
+                <option value="">Selecione...</option>
+                <option value="REAGENT">Reagente</option>
+                <option value="CALIBRATOR">Calibrador</option>
+                <option value="CONTROL">Controle</option>
+                <option value="SUPPLY">Insumos</option>
+        </th:block>
+
+    <th:block th:fragment="itemOptions">
+
+        <optgroup label="Reagentes">
+                <option value="AUR|REAGENT">Ácido Úrico</option>
+                <option value="ALB|REAGENT">Albumina</option>
+                <option value="ALT|REAGENT">ALT| TGP</option>
+                <option value="AMY|REAGENT">Amilase</option>
+                <option value="AST|REAGENT">AST| TGO</option>
+                <option value="BILD|REAGENT">Bilirrubina Direta</option>
+                <option value="BILT|REAGENT">Bilirrubina Total</option>
+                <option value="CA|REAGENT">Cálcio</option>
+                <option value="UIBC|REAGENT">Capacidade de Lig. Ferro</option>
+                <option value="HDL|REAGENT">Colesterol| HDL</option>
+                <option value="CHOL|REAGENT">Colesterol Total</option>
+                <option value="CRE|REAGENT">Creatinina</option>
+                <option value="CPK|REAGENT">Creatino Kinase</option>
+                <option value="CKMB|REAGENT">Creatino Kinase| MB</option>
+                <option value="CL|REAGENT">Eletrodo| Cloro</option>
+                <option value="K|REAGENT">Eletrodo| Potássio</option>
+                <option value="NA|REAGENT">Eletrodo| Sódio</option>
+                <option value="IRON|REAGENT">Ferro</option>
+                <option value="ALP|REAGENT">Fosfatase Alcalina</option>
+                <option value="PHOS|REAGENT">Fósforo</option>
+                <option value="GGT|REAGENT">Gama-GT</option>
+                <option value="GLUC|REAGENT">Glicose</option>
+                <option value="LDH|REAGENT">Lactato Desidrogenase</option>
+                <option value="LIP|REAGENT">Lipase</option>
+                <option value="MG|REAGENT">Magnésio</option>
+                <option value="ALBU|REAGENT">Microalbuminúria</option>
+                <option value="CRP|REAGENT">Proteína C Reativa</option>
+                <option value="TP|REAGENT">Proteínas Totais</option>
+                <option value="TPU|REAGENT">Proteínas Urinárias</option>
+                <option value="CO2|REAGENT">Reserva Alcalina</option>
+                <option value="TRA|REAGENT">Transferrina</option>
+                <option value="TRI|REAGENT">Triglicerídeos </option>
+                <option value="URE|REAGENT">Uréia</option>
+        </optgroup>
+
+        <optgroup label="Calibradores">
+                <option value="CFAS|CALIBRATOR">C.F.A.S</option>
+                <option value="CLIP|CALIBRATOR">C.F.A.S| Lipides</option>
+                <option value="CPRO|CALIBRATOR">C.F.A.S| Proteins</option>
+                <option value="CPUC|CALIBRATOR">C.F.A.S| PUC</option>
+                <option value="FESD|CALIBRATOR">Fe Standard</option>
+                <option value="HIGH|CALIBRATOR">ISE| HIGH</option>
+                <option value="LOW|CALIBRATOR">ISE| LOW</option>
+                <option value="AMMC|CALIBRATOR">NH3/ETH/CO2| Calibrator</option>
+        </optgroup>
+
+        <optgroup label="Controles">
+                <option value="CTLB|CALIBRATOR">ControLab - Bioquímica Urinária</option>
+                <option value="AMMN|CALIBRATOR">NH3/ETH/CO2| N</option>
+                <option value="AMMN|CALIBRATOR">NH3/ETH/CO2| P</option>
+                <option value="PCC1|CONTROL">Control Multi 1</option>
+                <option value="PCC2|CONTROL">Control Multi 2</option>
+                <option value="PNO|CALIBRATOR">PreciNorm </option>
+                <option value="PPH|CALIBRATOR">PreciPath </option>
+        </optgroup>
+
+        <optgroup label="Insumos">
+                <option value="AWSH|SUPPLY">Acid Wash</option>
+                <option value="ACTV|SUPPLY">Activator</option>
+                <option value="ABSC|SUPPLY">Basic Wash</option>
+                <option value="ECOD|SUPPLY">ECO-D</option>
+                <option value="REF|SUPPLY">Eletrodo| REF</option>
+                <option value="HEAT|SUPPLY">Heat Cut</option>
+                <option value="ICLN|SUPPLY">ISE| Clean</option>
+                <option value="IDPT|SUPPLY">ISE| Deproteinizer</option>
+                <option value="IDIL|SUPPLY">ISE| Diluent </option>
+                <option value="IINT|SUPPLY">ISE| Internal</option>
+                <option value="IREF|SUPPLY">ISE| Reference </option>
+                <option value="LAMP|SUPPLY">Lâmpada</option>
+                <option value="NACL|SUPPLY">NACL</option>
+                <option value="NAOH|SUPPLY">NAOH-D</option>
+                <option value="P200|SUPPLY">Ponteira| 200Ui</option>
+                <option value="PMIL|SUPPLY">Ponteira| 1000Ui</option>
+                <option value="REC|SUPPLY">Reaction Cell</option>
+                <option value="SMS|SUPPLY">SMS</option>
+                <option value="STT|SUPPLY">Start</option>
+            </optgroup>
+
+        </th:block>
+    </body>
+</html>

@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::content})}">
 
-</body>
+<th:block th:fragment="content">
+    <section class="lims-page inventory-page">
+        <div class="page-header">
+            <div>
+                <p class="page-kicker">Inventario</p>
+                <h1>Estoque atual</h1>
+                <p>Consulta operacional dos saldos disponiveis por item, lote e validade.</p>
+            </div>
+            <div class="page-actions">
+                <a class="btn btn-light btn-sm" th:href="@{/inventory/index}">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar
+                </a>
+                <a class="btn btn-primary btn-sm" th:href="@{/inventory/entry}">
+                    <i class="fas fa-plus"></i>
+                    Entrada
+                </a>
+            </div>
+        </div>
+
+        <section class="dashboard-panel">
+            <div class="inventory-toolbar">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Buscar por item, lote ou categoria">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <select class="form-control">
+                    <option>Todos os tipos</option>
+                    <option>Reagentes</option>
+                    <option>Calibradores</option>
+                    <option>Controles</option>
+                    <option>Insumos</option>
+                </select>
+            </div>
+
+            <div class="inventory-table full">
+                <div class="inventory-row inventory-head">
+                    <span>Item</span>
+                    <span>Tipo</span>
+                    <span>Lote</span>
+                    <span>Validade</span>
+                    <span>Saldo</span>
+                    <span>Status</span>
+                </div>
+                <div class="inventory-row">
+                    <span>ALT / TGP</span>
+                    <span>Reagente</span>
+                    <span>ALT2605</span>
+                    <span>18/07/2026</span>
+                    <span>3 kits</span>
+                    <span class="status-pill danger">Critico</span>
+                </div>
+                <div class="inventory-row">
+                    <span>Glicose</span>
+                    <span>Reagente</span>
+                    <span>GLU1820</span>
+                    <span>22/10/2026</span>
+                    <span>18 kits</span>
+                    <span class="status-pill success">Adequado</span>
+                </div>
+                <div class="inventory-row">
+                    <span>PreciNorm</span>
+                    <span>Controle</span>
+                    <span>PN3102</span>
+                    <span>16/06/2026</span>
+                    <span>5 frascos</span>
+                    <span class="status-pill warning">Vencimento</span>
+                </div>
+                <div class="inventory-row">
+                    <span>Reaction Cell</span>
+                    <span>Insumo</span>
+                    <span>RC0419</span>
+                    <span>Indeterminada</span>
+                    <span>18 un</span>
+                    <span class="status-pill warning">Baixo</span>
+                </div>
+            </div>
+        </section>
+    </section>
+</th:block>
+
 </html>

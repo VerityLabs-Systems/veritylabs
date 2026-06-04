@@ -3,7 +3,6 @@ package br.net.veritylabs.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class InventoryControllers {
@@ -18,5 +17,17 @@ public class InventoryControllers {
     public String entry(Model model) {
         model.addAttribute("title", "Inventory - VerityLabs");
         return "inventory/entry";
+    }
+
+    @GetMapping({"/inventory/list"})
+    public String list(Model model) {
+        model.addAttribute("title", "Inventory - VerityLabs");
+        return "inventory/list";
+    }
+
+    @GetMapping({"/inventory/exit"})
+    public String exit(Model model) {
+        model.addAttribute("title", "Inventory - VerityLabs");
+        return "inventory/exit";
     }
 }
