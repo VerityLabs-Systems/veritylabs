@@ -146,6 +146,3 @@ Próximas frentes previstas:
 
 Fases futuras podem incluir controle de qualidade com gráficos de Levey-Jennings, ingestão de dados analíticos, visualização exploratória e suporte à detecção de anomalias.
 
-## Observações
-
-VerityLabs é uma iniciativa técnica e de pesquisa em evolução. O README deve acompanhar apenas funcionalidades implementadas ou planejadas com clareza, evitando tratar como pronto aquilo que ainda está em desenho.
